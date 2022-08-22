@@ -1,10 +1,11 @@
 import React, {Component} from "react";
 import { BrowserRouter, Link, Routes, Route } from "react-router-dom";
-import Home from "./Home";
-import Sobre from "./Sobre";
-import Contatos from "./Contatos";
+import Home from "../../views/home/Home";
+import Sobre from "../../views/sobre/Sobre";
+import Contatos from "../../views/contatos/Contatos";
 import styled from "styled-components";
-import Movies from "../views/movies/Movies";
+import Movies from "../../views/movies/Movies";
+import Series from "../../views/series/Series"
 
 const H1 = styled.h1`
     color: #e50914;
@@ -30,6 +31,9 @@ class Header extends Component {
                 <li>
                     <Link to="/filmes">Filmes</Link>
                 </li>
+                <li>
+                    <Link to="/series">Séries</Link>
+                </li>
             </ul>
         </nav>
         <Routes>
@@ -37,6 +41,7 @@ class Header extends Component {
             <Route path="/sobre" element={<Sobre />} />
             <Route path="/contatos" element={<Contatos />} />
             <Route path="/filmes" element={<Movies />} />
+            <Route path="/series" element={<Series />} />
         </Routes>
       </BrowserRouter>
     )
