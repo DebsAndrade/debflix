@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/debflix/static/css/main.b98cd59e.css",
+    "main.js": "/debflix/static/js/main.e6308a59.js",
+    "static/js/787.6c4dc3de.chunk.js": "/debflix/static/js/787.6c4dc3de.chunk.js",
+    "index.html": "/debflix/index.html",
+    "main.b98cd59e.css.map": "/debflix/static/css/main.b98cd59e.css.map",
+    "main.e6308a59.js.map": "/debflix/static/js/main.e6308a59.js.map",
+    "787.6c4dc3de.chunk.js.map": "/debflix/static/js/787.6c4dc3de.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b98cd59e.css",
+    "static/js/main.e6308a59.js"
+  ]
+}
