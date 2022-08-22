@@ -4,6 +4,7 @@ import Home from "./Home";
 import Sobre from "./Sobre";
 import Contatos from "./Contatos";
 import styled from "styled-components";
+import Movies from "../views/movies/Movies";
 
 const H1 = styled.h1`
     color: #e50914;
@@ -26,12 +27,16 @@ class Header extends Component {
                 <li>
                     <Link to="/contatos">Contatos</Link>
                 </li>
+                <li>
+                    <Link to="/filmes">Filmes</Link>
+                </li>
             </ul>
         </nav>
         <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/sobre" element={<Sobre />} />
             <Route path="/contatos" element={<Contatos />} />
+            <Route path="/filmes" element={<Movies />} />
         </Routes>
       </BrowserRouter>
     )
