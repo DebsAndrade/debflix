@@ -31,8 +31,8 @@ export default class Series extends React.Component {
       <>
         <input onChange={this.handleChange} />
         {this.state.filterSeries.map((item, index) => (
-          <div>
-            <ul key={index}>
+          <div key={index}>
+            <ul>
               <li>{item.name}</li>
               <li>{item.overview}</li>
               <li>{item.vote_average}</li>

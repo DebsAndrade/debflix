@@ -29,10 +29,11 @@ export default class Movies extends React.Component {
   render() {
     return (
       <>
+      {console.log('Renderizou class')}
         <input onChange={this.handleChange} />
         {this.state.filterMovies.map((item, index) => (
-          <div>
-            <ul key={index}>
+          <div key={index}>
+            <ul>
               <li>{item.title}</li>
               <li>{item.overview}</li>
               <li>{item.vote_average}</li>
