@@ -21,16 +21,16 @@ class Header extends Component {
                     <Link to="/">Home</Link>
                 </li>
                 <li>
-                    <Link to="/filmes">Filmes</Link>
+                    <Link to="/movies">Movies</Link>
                 </li>
                 <li>
-                    <Link to="/series">Séries</Link>
+                    <Link to="/series">Series</Link>
                 </li>
             </ul>
         </nav>
         <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/filmes" element={<Movies />} />
+            <Route path="/movies" element={<Movies />} />
             <Route path="/series" element={<Series />} />
         </Routes>
       </BrowserRouter>

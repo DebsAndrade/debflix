@@ -1,47 +1,39 @@
-import React from "react";
-import { getPopularMovies } from "../../services/MovieService";
+import React, { useEffect, useState } from 'react';
+import { getPopularMovies } from '../../services/MovieService';
 
-export default class Movies extends React.Component {
-  state = {
-    movies: [],
-    filterMovies: []
+const Movies = () => {
+  const [movies, setMovies] = useState([]);
+  const [filter, setFilter] = useState("");
+
+  const filteredList = filter.length > 0 
+    ? movies.filter((i) => i.title.toLowerCase().includes(filter))
+    : [];
+
+  useEffect(() => {
+    getPopularMovies(true)
+      .then(values => setMovies(values))
+      .catch(error => console.log('Unable to get the movies:', error));
+  }, []);
+
+  const _onChange = (evento) => {
+    setFilter(evento.target.value.toLowerCase());
   }
 
-  componentDidMount() {
-    getPopularMovies(true).then((values) => {
-      this.setState({
-        movies: values,
-        filterMovies: values
-      })
-    })
-  }
-
-  handleChange = (event) =>{
-    const listaFiltrada = this.state.movies.filter((item) => {
-        return item.title.toLowerCase().includes(event.target.value.toLowerCase())
-    })
-    this.setState({
-        filterMovies: listaFiltrada
-    })
-    console.log(this.state.filterMovies)
+  return (
+    <>
+      <input onChange={_onChange} />
+      {(filteredList.length ? filteredList : movies).map((item) => (
+        <div key={item.id}>
+          <ul>
+            <li>{item.title}</li>
+            <li>{item.overview}</li>
+            <li>{item.vote_average}</li>
+          </ul>
+          <img src={item.image} alt="posters" />
+        </div>
+      ))}
+    </>
+  )
 }
 
-  render() {
-    return (
-      <>
-      {console.log('Renderizou class')}
-        <input onChange={this.handleChange} />
-        {this.state.filterMovies.map((item, index) => (
-          <div key={index}>
-            <ul>
-              <li>{item.title}</li>
-              <li>{item.overview}</li>
-              <li>{item.vote_average}</li>
-            </ul>
-            <img src={item.image} alt="posters" />
-          </div>
-        ))}
-      </>
-    )
-  }
-}
+export default Movies
