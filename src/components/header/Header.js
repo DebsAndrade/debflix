@@ -1,8 +1,6 @@
 import React, {Component} from "react";
 import { BrowserRouter, Link, Routes, Route } from "react-router-dom";
 import Home from "../../views/home/Home";
-import Sobre from "../../views/sobre/Sobre";
-import Contatos from "../../views/contatos/Contatos";
 import styled from "styled-components";
 import Movies from "../../views/movies/Movies";
 import Series from "../../views/series/Series"
@@ -23,12 +21,6 @@ class Header extends Component {
                     <Link to="/">Home</Link>
                 </li>
                 <li>
-                    <Link to="/sobre">Sobre</Link>
-                </li>
-                <li>
-                    <Link to="/contatos">Contatos</Link>
-                </li>
-                <li>
                     <Link to="/filmes">Filmes</Link>
                 </li>
                 <li>
@@ -38,8 +30,6 @@ class Header extends Component {
         </nav>
         <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/sobre" element={<Sobre />} />
-            <Route path="/contatos" element={<Contatos />} />
             <Route path="/filmes" element={<Movies />} />
             <Route path="/series" element={<Series />} />
         </Routes>
