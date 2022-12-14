@@ -22,7 +22,7 @@ export const getPopularMovies = async (withImage = false) => {
     return results.map((item) => {
         let movie = {...item}
         if (withImage) {
-            movie["image"] = `https://image.tmdb.org/t/p/w500${item.poster_path}`
+            movie["image"] = `https://image.tmdb.org/t/p/w300${item.poster_path}`
         }
         return movie
     })
