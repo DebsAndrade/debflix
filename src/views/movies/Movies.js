@@ -23,7 +23,7 @@ const Movies = () => {
   return (
     <>
       <input onChange={_onChange} />
-      <div >
+      <div>
         <div className='boxMovies'>
           {(filteredList.length ? filteredList : movies).map((item) => (
             <div key={item.id}>
